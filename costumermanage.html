@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Müşteri Yönetimi</title>
+    <link rel="stylesheet" href="./css/costumermanage.css">
+    <script src="./js/costumermanage.js"></script>
+</head>
+
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2>Otel Yönetimi</h2>
+            <ul class="sidebar-menu">
+                <li><a href="adminpage.html">Dashboard</a></li>
+                <li><a href="reservationmanagementpage.html">Rezervasyon Yönetimi</a></li>
+                <li><a href="roommanage.html" class="active" >Oda Yönetimi</a></li>
+                <li><a href="costumermanage.html">Müşteri Yönetimi</a></li>
+                <li><a href="financep.html">Finans ve Raporlama</a></li>
+                <li><a href="settings.html">Ayarlar</a></li>
+                <li><a href="../index.html">Çıkış Yap</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <header class="main-header">
+                <h1>Müşteri Yönetimi</h1>
+                <button class="btn-primary">Yeni Müşteri Ekle</button>
+            </header>
+
+            <!-- Odalar Tablosu -->
+            <div class="table-container">
+                <h3>Müşteri Listesi</h3>
+                <table class="room-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Adı Soyadı</th>
+                            <th>E-Posta</th>
+                            <th>Telefon</th>
+                            <th>Son Rezervasyon</th>
+                            <th>Aksiyon</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Ali Yılmaz</td>
+                            <td>ali.yilmaz@example.com</td>
+                            <td><span class="badge success">+90 530 123 45 67	</span></td>
+                            <td>26 Kasım 2024</td>
+                            <td>
+                                <button class="btn-small btn-detail">Düzenle</button>
+                                <button class="btn-small btn-danger">Sil</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Ayşe Demir</td>
+                            <td>ayse.demir@example.com</td>
+                            <td><span class="badge warning">+90 532 987 65 43</span></td>
+                            <td>25 Kasım 2024</td>
+                            <td>
+                                <button class="btn-small btn-detail">Düzenle</button>
+                                <button class="btn-small btn-danger">Sil</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Mehmet Kaya</td>
+                            <td>mehmet.kaya@example.com</td>
+                            <td><span class="badge danger">	+90 534 555 12 34</span></td>
+                            <td>24 Kasım 2024</td>
+                            <td>
+                                <button class="btn-small btn-detail">Düzenle</button>
+                                <button class="btn-small btn-danger">Sil</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+        <!-- Detay Modal -->
+        <div class="modal" id="modal-detail">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Rezervasyon Detayları</h3>
+                    <button class="modal-close">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <!-- JS ile doldurulacak -->
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-primary modal-close">Kapat</button>
+                </div>
+            </div>
+        </div>
+    
+<!-- Yeni Oda Ekle Modal -->
+<div class="modal" id="modal-add">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Yeni Müşteri Ekle</h3>
+            <button class="modal-close">&times;</button>
+        </div>
+        <div class="modal-body">
+            <form id="addReservationForm">
+                <div>
+                    <label for="roomNumber">Adı Soyadı:</label>
+                    <input type="text" id="roomNumber" name="roomNumber" required>
+                </div>
+                <div>
+                    <label for="roomType">E Posta:</label>
+                    <input type="text" id="roomType" name="roomType" required>
+                </div>
+                <div>
+                    <label for="price">Telefon:</label>
+                    <input type="number" id="price" name="price" required>
+                </div>
+                <div>
+                    <label for="price">Son Rezervasyon:</label>
+                    <input type="number" id="price" name="price" required>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button class="btn-primary" type="submit" form="addReservationForm">Kaydet</button>
+            <button class="btn-danger modal-close">İptal</button>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayarlar - Otel Yönetimi</title>
+    <link rel="stylesheet" href="./css/finance.css">
+    <script src="./js/common.js"></script>
+</head>
+
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>Otel Yönetimi</h2>
+            <nav>
+                <ul class="sidebar-menu">
+                    <li><a href="adminpage.html">Dashboard</a></li>
+                    <li><a href="reservationmanagementpage.html">Rezervasyon Yönetimi</a></li>
+                    <li><a href="roommanage.html">Oda Yönetimi</a></li>
+                    <li><a href="costumermanage.html">Müşteri Yönetimi</a></li>
+                    <li><a href="financep.html">Finans ve Raporlama</a></li>
+                    <li><a href="settings.html" class="active">Ayarlar</a></li>
+                    <li><a href="../index.html">Çıkış Yap</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="main-header">
+                <h1>Ayarlar</h1>
+                <p>Sistem ayarlarınızı kolayca yapılandırın.</p>
+            </header>
+
+            <section class="settings">
+                <form class="settings-form">
+                    <!-- Genel Ayarlar -->
+                    <fieldset class="settings-section">
+                        <legend>Genel Ayarlar</legend>
+                        <div class="form-group">
+                            <label for="hotelName">Otel Adı</label>
+                            <input type="text" id="hotelName" name="hotelName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="hotelEmail">E-posta</label>
+                            <input type="email" id="hotelEmail" name="hotelEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="hotelPhone">Telefon</label>
+                            <input type="tel" id="hotelPhone" name="hotelPhone" required>
+                        </div>
+                    </fieldset>
+
+                    <!-- Tema Ayarları -->
+                    <fieldset class="settings-section">
+                        <legend>Tema Ayarları</legend>
+                        <div class="form-group">
+                            <label for="themeColor">Tema Rengi</label>
+                            <select id="themeColor" name="themeColor">
+                                <option value="light">Açık Tema</option>
+                                <option value="dark">Koyu Tema</option>
+                            </select>
+                        </div>
+                    </fieldset>
+
+                    <!-- Güvenlik Ayarları -->
+                    <fieldset class="settings-section">
+                        <legend>Güvenlik Ayarları</legend>
+                        <div class="form-group">
+                            <label for="newPassword">Şifre Değiştir</label>
+                            <input type="password" id="newPassword" name="newPassword">
+                        </div>
+                        <div class="form-group">
+                            <label for="2fa">2 Faktörlü Kimlik Doğrulama</label>
+                            <select id="2fa" name="2fa">
+                                <option value="enabled">Etkin</option>
+                                <option value="disabled">Devre Dışı</option>
+                            </select>
+                        </div>
+                    </fieldset>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-save">Ayarları Kaydet</button>
+                        <button type="reset" class="btn-reset">Temizle</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,343 @@
+/* Renk Değişkenleri */
+:root {
+    --primary-color: #3498db;
+    --primary-hover: #2980b9;
+    --secondary-color: #2c3e50;
+    --secondary-hover: #34495e;
+    --success-color: #27ae60;
+    --warning-color: #f1c40f;
+    --danger-color: #e74c3c;
+    --danger-hover: #c0392b;
+    --text-color: #333;
+    --text-light: #ecf0f1;
+    --background-color: #f5f5f5;
+    --table-header-bg: #f4f4f4;
+    --border-color: #ddd;
+    --card-bg-color: #fff;
+}
+
+/* Genel Ayarlar */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-light);
+    color: var(--text-dark);
+}
+
+/* Dashboard Layout */
+.dashboard {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar h2 {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-menu li {
+    margin: 10px 0;
+}
+
+.sidebar-menu li a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-size: 16px;
+    padding: 10px;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar-menu li a.active,
+.sidebar-menu li a:hover {
+    background-color: var(--primary-color);
+}
+
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    overflow-y: auto;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.main-header h1 {
+    font-size: 24px;
+    color: var(--secondary-color);
+}
+
+/* Genel Buton Stilleri */
+button {
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Birincil Buton */
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 10px 20px;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Küçük Butonlar */
+.btn-small {
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+.btn-small.btn-detail {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+}
+
+.btn-small.btn-detail:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-small.btn-danger {
+    background-color: var(--danger-color);
+    color: var(--text-light);
+}
+
+.btn-small.btn-danger:hover {
+    background-color: var(--danger-hover);
+}
+
+/* Tablo Tasarımı */
+.room-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background-color: var(--text-light);
+}
+
+.room-table th,
+.room-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.room-table th {
+    background-color: var(--table-header-bg);
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.room-table tr:hover {
+    background-color: var(--background-color);
+}
+
+/* Badge */
+.badge {
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 5px;
+    color: #fff;
+    display: inline-block;
+    text-align: center;
+}
+
+.badge.success {
+    background-color: var(--success-color);
+}
+
+.badge.warning {
+    background-color: var(--warning-color);
+    color: var(--text-color);
+}
+
+.badge.danger {
+    background-color: var(--danger-color);
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+    .dashboard {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        text-align: center;
+    }
+
+    .main-content {
+        padding: 15px;
+    }
+
+    .room-table th,
+    .room-table td {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+/* Modal Stili */
+.modal {
+    display: none; /* Varsayılan olarak gizlenmiş */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Saydam arka plan */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal.show {
+    display: flex;
+    opacity: 1; /* Açıldığında görünür */
+}
+
+.modal-content {
+    background-color: var(--card-bg-color);
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.modal-header h3 {
+    margin: 0;
+}
+
+.modal-close {
+    font-size: 20px;
+    font-weight: bold;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--danger-color);
+}
+
+.modal-body {
+    margin: 0 auto; /* Ortalamak için */
+    display: flex; /* Flexbox etkin */
+    flex-direction: column; /* Dikey sıralama */
+    gap: 15px; /* Her satır arasında boşluk */
+    width: 100%; /* Tüm form genişliği */
+    max-width: 400px; /* Maksimum genişlik */
+}
+
+label {
+    width: 30%; /* Label genişliği */
+    text-align: right; /* Sağ hizalama */
+    margin-right: 10px; /* Input ile boşluk */
+    font-size: 14px; /* Yazı boyutu */
+}
+
+input {
+    width: 70%; /* Input genişliği */
+    padding: 8px; /* İç boşluk */
+    font-size: 14px; /* Yazı boyutu */
+    border: 1px solid #ccc; /* Kenarlık */
+    border-radius: 5px; /* Köşe yuvarlama */
+    box-sizing: border-box; /* Kenarlık ve padding hesaba dahil */
+}
+
+form {
+    display: flex; /* Satırları hizalamak için flex */
+    flex-direction: column; /* Satırları dikey sırala */
+    gap: 15px; /* Elemanlar arasındaki boşluk */
+}
+
+form > div {
+    display: flex; /* Label ve Input'u aynı satıra koyar */
+    align-items: center; /* Dikey ortalama */
+}
+
+
+.modal-footer {
+    display: flex;              /* Flexbox düzeni */
+    justify-content: space-between; /* Butonları sağa ve sola hizalar */
+    gap: 10px;                  /* Butonlar arasındaki boşluk */
+    margin-top: 20px;           /* Modal gövdesiyle aralık */
+    padding-top: 10px;          /* İçerik ile butonlar arasında boşluk */
+    border-top: 1px solid #ccc; /* Üst kenarlık (isteğe bağlı) */
+}
+
+.modal-footer button {
+    flex: 1;                    /* Butonların eşit genişlikte olması */
+    padding: 10px;              /* İç boşluk */
+    font-size: 15px;            /* Yazı boyutu */
+    border-radius: 5px;         /* Yuvarlatılmış köşeler */
+    cursor: pointer;            /* Fare işaretçisi */
+    transition: background-color 0.3s ease;
+    margin: 0 5px;              /* Butonlar arasındaki mesafe */
+}
+
+.modal-footer .btn-primary {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.modal-footer .btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.modal-footer .btn-danger {
+    background-color: var(--danger-color);
+    color: #fff;
+}
+
+.modal-footer .btn-danger:hover {
+    background-color: var(--danger-hover);
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

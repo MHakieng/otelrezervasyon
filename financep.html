@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finans ve Raporlama</title>
+    <link rel="stylesheet" href="./css/finance.css">
+    <script src="./js/common.js"></script>
+</head>
+
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>Otel Yönetimi</h2>
+            <nav>
+                <ul class="sidebar-menu">
+                    <li><a href="adminpage.html">Dashboard</a></li>
+                    <li><a href="reservationmanagementpage.html">Rezervasyon Yönetimi</a></li>
+                    <li><a href="roommanage.html">Oda Yönetimi</a></li>
+                    <li><a href="costumermanage.html">Müşteri Yönetimi</a></li>
+                    <li><a href="financep.html" class="active">Finans ve Raporlama</a></li>
+                    <li><a href="settings.html">Ayarlar</a></li>
+                    <li><a href="../index.html">Çıkış Yap</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="main-header">
+                <h1>Finans ve Raporlama</h1>
+                <div class="report-controls">
+                    <button class="btn-primary">Yeni Rapor Oluştur</button>
+                    <select class="filter-select" aria-label="Tarih Aralığı Filtreleme">
+                        <option value="lastWeek">Geçen Hafta</option>
+                        <option value="lastMonth">Geçen Ay</option>
+                        <option value="thisYear">Bu Yıl</option>
+                    </select>
+                </div>
+            </header>
+
+            <!-- Rapor Kartları -->
+            <section class="reports">
+                <article class="report-card" data-report="revenue">
+                    <h3>Toplam Gelir</h3>
+                    <p>$32,800</p>
+                    <span class="status increase">+3.41% (Geçen Hafta)</span>
+                </article>
+                <article class="report-card" data-report="newReservations">
+                    <h3>Yeni Rezervasyonlar</h3>
+                    <p>135</p>
+                    <span class="status increase">+2.28% (Geçen Hafta)</span>
+                </article>
+                <article class="report-card" data-report="roomOccupancy">
+                    <h3>Odalar Dolu</h3>
+                    <p>98 / 256</p>
+                    <span class="status decrease">-1.56% (Geçen Ay)</span>
+                </article>
+                <article class="report-card" data-report="checkInCheckOut">
+                    <h3>Check-In / Check-Out</h3>
+                    <p>101 / 29</p>
+                </article>
+            </section>
+
+            <!-- Rapor Tablosu -->
+            <section class="report-table">
+                <h2>Son 6 Aylık Gelir Raporu</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Aylık</th>
+                            <th>Gelir</th>
+                            <th>Yüzde Değişim</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Ocak</td>
+                            <td>$20,000</td>
+                            <td>+5%</td>
+                        </tr>
+                        <tr>
+                            <td>Şubat</td>
+                            <td>$22,000</td>
+                            <td>+10%</td>
+                        </tr>
+                        <tr>
+                            <td>Mart</td>
+                            <td>$18,000</td>
+                            <td>-4%</td>
+                        </tr>
+                        <tr>
+                            <td>Nisan</td>
+                            <td>$25,000</td>
+                            <td>+8%</td>
+                        </tr>
+                        <tr>
+                            <td>Mayıs</td>
+                            <td>$30,000</td>
+                            <td>+12%</td>
+                        </tr>
+                        <tr>
+                            <td>Haziran</td>
+                            <td>$28,184</td>
+                            <td>-2%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Tarih aralığına göre raporları filtrele
+        document.querySelector('.filter-select').addEventListener('change', function (event) {
+            console.log("Filtrelenen Tarih Aralığı: " + event.target.value);
+            // Burada API çağrısı veya veritabanı sorgusu yapılabilir
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Otel Rezervasyon Sistemi - Admin Panel</title>
+    <link rel="stylesheet" href="./css/adminpage.css">
+    <script src="./js/adminpage.js" defer></script>
+</head>
+
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2 class="sidebar-title">Otel Yönetimi</h2>
+            <nav>
+                <ul class="sidebar-menu">
+                    <li><a href="adminpage.html" class="active">Dashboard</a></li>
+                    <li><a href="reservationmanagementpage.html">Rezervasyon Yönetimi</a></li>
+                    <li><a href="roommanage.html">Oda Yönetimi</a></li>
+                    <li><a href="costumermanage.html">Müşteri Yönetimi</a></li>
+                    <li><a href="financep.html">Finans ve Raporlama</a></li>
+                    <li><a href="settings.html">Ayarlar</a></li>
+                    <li><a href="../index.html">Çıkış Yap</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="main-header">
+                <h1>Dashboard</h1>
+                <button class="btn-primary">Yeni Rezervasyon</button>
+            </header>
+
+            <!-- Cards Section -->
+            <section class="cards">
+                <article class="card">
+                    <h3>Bugünkü Check-In</h3>
+                    <p class="card-number">20</p>
+                    <p>Giriş yapacak müşteriler.</p>
+                </article>
+                <article class="card card-success">
+                    <h3>Bugünkü Check-Out</h3>
+                    <p class="card-number">15</p>
+                    <p>Çıkış yapacak müşteriler.</p>
+                </article>
+                <article class="card card-warning">
+                    <h3>Boş Odalar</h3>
+                    <p class="card-number">10</p>
+                    <p>Şu anda müsait odalar.</p>
+                </article>
+            </section>
+
+            <!-- Reservation Table -->
+            <section class="table-container">
+                <h2>Son Rezervasyonlar</h2>
+                <table class="reservation-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Müşteri Adı</th>
+                            <th>Oda No</th>
+                            <th>Giriş Tarihi</th>
+                            <th>Çıkış Tarihi</th>
+                            <th>Durum</th>
+                            <th>Aksiyon</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-id="1">
+                            <td>1</td>
+                            <td>Ali Yılmaz</td>
+                            <td>101</td>
+                            <td>26 Kasım 2024</td>
+                            <td>28 Kasım 2024</td>
+                            <td><span class="badge success">Onaylandı</span></td>
+                            <td>
+                                <button class="btn-small btn-detail">Detay</button>
+                                <button class="btn-small btn-danger">Sil</button>
+                            </td>
+                        </tr>
+                        <tr data-id="2">
+                            <td>2</td>
+                            <td>Ayşe Demir</td>
+                            <td>102</td>
+                            <td>27 Kasım 2024</td>
+                            <td>29 Kasım 2024</td>
+                            <td><span class="badge warning">Bekliyor</span></td>
+                            <td>
+                                <button class="btn-small btn-detail">Detay</button>
+                                <button class="btn-small btn-danger">Sil</button>
+                            </td>
+                        </tr>
+                        <tr data-id="3">
+                            <td>3</td>
+                            <td>Mehmet Kaya</td>
+                            <td>103</td>
+                            <td>25 Kasım 2024</td>
+                            <td>27 Kasım 2024</td>
+                            <td><span class="badge danger">İptal Edildi</span></td>
+                            <td>
+                                <button class="btn-small btn-detail">Detay</button>
+                                <button class="btn-small btn-danger">Sil</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <!-- Detay Modal -->
+    <div class="modal" id="modal-detail">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Rezervasyon Detayları</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <!-- JS ile doldurulacak -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn-primary modal-close">Kapat</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Yeni Rezervasyon Modal -->
+    <div class="modal" id="modal-add">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Yeni Rezervasyon</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="addReservationForm">
+                    <label>Müşteri Adı:</label>
+                    <input type="text" name="customerName" required>
+                    <label>Oda Numarası:</label>
+                    <input type="number" name="roomNumber" required>
+                    <label>Giriş Tarihi:</label>
+                    <input type="date" name="checkIn" required>
+                    <label>Çıkış Tarihi:</label>
+                    <input type="date" name="checkOut" required>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-primary" type="submit" form="addReservationForm">Kaydet</button>
+                <button class="btn-danger modal-close">İptal</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oda Yönetimi</title>
+    <link rel="stylesheet" href="./css/roommanage.css">
+    <script src="./js/roommanage.js"></script>
+</head>
+
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2>Otel Yönetimi</h2>
+            <ul class="sidebar-menu">
+                <li><a href="adminpage.html">Dashboard</a></li>
+                <li><a href="reservationmanagementpage.html">Rezervasyon Yönetimi</a></li>
+                <li><a href="roommanage.html" class="active" >Oda Yönetimi</a></li>
+                <li><a href="costumermanage.html">Müşteri Yönetimi</a></li>
+                <li><a href="financep.html">Finans ve Raporlama</a></li>
+                <li><a href="settings.html">Ayarlar</a></li>
+                <li><a href="../index.html">Çıkış Yap</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <header class="main-header">
+                <h1>Oda Yönetimi</h1>
+                <button class="btn-primary">Yeni Oda Ekle</button>
+            </header>
+
+            <!-- Odalar Tablosu -->
+            <div class="table-container">
+                <h3>Oda Listesi</h3>
+                <table class="room-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Oda No</th>
+                            <th>Tip</th>
+                            <th>Durum</th>
+                            <th>Fiyat</th>
+                            <th>Aksiyon</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>101</td>
+                            <td>Standart</td>
+                            <td><span class="badge success">Boş</span></td>
+                            <td>500₺</td>
+                            <td>
+                                <button class="btn-small btn-detail">Düzenle</button>
+                                <button class="btn-small btn-danger">Sil</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>102</td>
+                            <td>Deluxe</td>
+                            <td><span class="badge warning">Rezerve</span></td>
+                            <td>750₺</td>
+                            <td>
+                                <button class="btn-small btn-detail">Düzenle</button>
+                                <button class="btn-small btn-danger">Sil</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>103</td>
+                            <td>Süit</td>
+                            <td><span class="badge danger">Bakımda</span></td>
+                            <td>1200₺</td>
+                            <td>
+                                <button class="btn-small btn-detail">Düzenle</button>
+                                <button class="btn-small btn-danger">Sil</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+        <!-- Detay Modal -->
+        <div class="modal" id="modal-detail">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Rezervasyon Detayları</h3>
+                    <button class="modal-close">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <!-- JS ile doldurulacak -->
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-primary modal-close">Kapat</button>
+                </div>
+            </div>
+        </div>
+    
+<!-- Yeni Oda Ekle Modal -->
+<div class="modal" id="modal-add">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Yeni Oda Ekle</h3>
+            <button class="modal-close">&times;</button>
+        </div>
+        <div class="modal-body">
+            <form id="addReservationForm">
+                <div>
+                    <label for="roomNumber">Oda No:</label>
+                    <input type="number" id="roomNumber" name="roomNumber" required>
+                </div>
+                <div>
+                    <label for="roomType">Oda Tipi:</label>
+                    <input type="text" id="roomType" name="roomType" required>
+                </div>
+                <div>
+                    <label for="price">Fiyat:</label>
+                    <input type="number" id="price" name="price" required>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button class="btn-primary" type="submit" form="addReservationForm">Kaydet</button>
+            <button class="btn-danger modal-close">İptal</button>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>
