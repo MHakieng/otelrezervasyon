@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ayarlar - Otel Yönetimi</title>
-    <link rel="stylesheet" href="./css/finance.css">
-    <script src="./js/common.js"></script>
+    <link rel="stylesheet" href="./css/settings.css">
+    <script src="./js/common.js" defer></script>
 </head>
 
 <body>
@@ -40,43 +40,51 @@
                     <fieldset class="settings-section">
                         <legend>Genel Ayarlar</legend>
                         <div class="form-group">
-                            <label for="hotelName">Otel Adı</label>
-                            <input type="text" id="hotelName" name="hotelName" required>
-                        </div>
-                        <div class="form-group">
                             <label for="hotelEmail">E-posta</label>
-                            <input type="email" id="hotelEmail" name="hotelEmail" required>
+                            <input type="email" id="hotelEmail" name="hotelEmail" placeholder="E-posta adresinizi girin" required>
                         </div>
                         <div class="form-group">
                             <label for="hotelPhone">Telefon</label>
-                            <input type="tel" id="hotelPhone" name="hotelPhone" required>
+                            <input type="tel" id="hotelPhone" name="hotelPhone" placeholder="Telefon numaranızı girin" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="hotelAddress">Adres</label>
+                            <textarea id="hotelAddress" name="hotelAddress" placeholder="Otel adresinizi girin" rows="3" required></textarea>
                         </div>
                     </fieldset>
 
-                    <!-- Tema Ayarları -->
-                    <fieldset class="settings-section">
-                        <legend>Tema Ayarları</legend>
-                        <div class="form-group">
-                            <label for="themeColor">Tema Rengi</label>
-                            <select id="themeColor" name="themeColor">
-                                <option value="light">Açık Tema</option>
-                                <option value="dark">Koyu Tema</option>
-                            </select>
-                        </div>
-                    </fieldset>
+                   
 
                     <!-- Güvenlik Ayarları -->
                     <fieldset class="settings-section">
                         <legend>Güvenlik Ayarları</legend>
                         <div class="form-group">
                             <label for="newPassword">Şifre Değiştir</label>
-                            <input type="password" id="newPassword" name="newPassword">
+                            <input type="password" id="newPassword" name="newPassword" placeholder="Yeni şifrenizi girin">
                         </div>
                         <div class="form-group">
-                            <label for="2fa">2 Faktörlü Kimlik Doğrulama</label>
-                            <select id="2fa" name="2fa">
-                                <option value="enabled">Etkin</option>
-                                <option value="disabled">Devre Dışı</option>
+                            <label for="confirmPassword">Şifreyi Onayla</label>
+                            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Şifrenizi tekrar girin">
+                        </div>
+                    </fieldset>
+
+                    <!-- Sistem Ayarları -->
+                    <fieldset class="settings-section">
+                        <legend>Sistem Ayarları</legend>
+                        <div class="form-group">
+                            <label for="currency">Para Birimi</label>
+                            <select id="currency" name="currency">
+                                <option value="TRY">Türk Lirası (TRY)</option>
+                                <option value="USD">ABD Doları (USD)</option>
+                                <option value="EUR">Euro (EUR)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="timezone">Zaman Dilimi</label>
+                            <select id="timezone" name="timezone">
+                                <option value="Europe/Istanbul">(GMT+3) İstanbul</option>
+                                <option value="Europe/London">(GMT+0) Londra</option>
+                                <option value="America/New_York">(GMT-5) New York</option>
                             </select>
                         </div>
                     </fieldset>
